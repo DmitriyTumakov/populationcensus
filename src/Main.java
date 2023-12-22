@@ -28,11 +28,10 @@ public class Main {
                 .map(Person::getFamily)
                 .collect(Collectors.toList());
 
-        List<String> ableToWork = persons.stream()
+        List<Person> ableToWork = persons.stream()
                 .filter(person -> person.getAge() > 18)
                 .filter(person -> person.getEducation() == Education.HIGHER)
                 .sorted(Comparator.comparing(Person::getFamily))
-                .map(Person::getFamily)
                 .collect(Collectors.toList());
     }
 }
